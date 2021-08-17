@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, {useState} from 'react';
+import { Switch, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero/Hero'
+import Gallery from './components/Gallery'
+import Contact from './components/Contact'
 
 function App() {
+  const [dark, setDark] = useState(false)
+
+  const changeMode = () => {
+    setDark(!dark)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <><Navbar dark={dark} setDark={changeMode} />
+      <Switch>       
+        <Route exact path='/' dark={dark} render={(props) => <Hero {...props} dark={dark} />} />
+        <Route path='/gallery' dark={dark} render={(props) => <Gallery {...props} dark={dark} />} />
+        <Route path='/contact' render={(props) => <Contact {...props} dark={dark} />} />
+      </Switch>
+    </>
+
+    
   );
 }
 
