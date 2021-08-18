@@ -4,6 +4,7 @@ import jawsImg from '../images/jaws.png'
 
 const CardBody = styled.div`
   border: 1px solid ${ props => props.dark ? 'white' : 'black'};
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;

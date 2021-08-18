@@ -115,13 +115,13 @@ const Navbar = ({dark, setDark}) => {
 
         <MenuButton dark={dark} onClick={() => setMobile(!mobile)} />       
         <NavLinks mobile={mobile} dark={dark}>
-          <NavLink as={Link} to='/' dark={dark} href="#">
+          <NavLink as={Link} to='/' dark={dark} onClick={() => setMobile(false)} href="#">
             Home
           </NavLink>
-          <NavLink as={Link} to='/gallery' dark={dark}  href="#">
+          <NavLink as={Link} to='/gallery' dark={dark} onClick={() => setMobile(false)} href="#">
             Gallery
           </NavLink>
-          <NavLink as={Link} to='/contact' dark={dark} href="#">
+          <NavLink as={Link} to='/contact' dark={dark} onClick={() => setMobile(false)} href="#">
             Contact
           </NavLink>
         </NavLinks> 

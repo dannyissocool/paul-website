@@ -20,7 +20,7 @@ const GalleryWrapper = styled.div`
   grid-gap: 2rem;
 
   @media(max-width: 768px) {
-    grid-template-columns: 400px;  
+    grid-template-columns: minmax(150px, 350px);  
   }
 `
 const StyledDivider = styled.div`
@@ -49,7 +49,8 @@ const Gallery = ({ dark }) => {
 
   return (
     <Body dark={dark}>
-      <GalleryWrapper>
+      <StyledTitle>Showcase</StyledTitle>
+      <GalleryWrapper>        
        {MappedCards}      
       </GalleryWrapper>
       <StyledDivider dark={dark} />
