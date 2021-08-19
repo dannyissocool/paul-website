@@ -21,13 +21,16 @@ const CardBody = styled.div`
   }
 `
 
-const GalleryCard = ( {dark} ) => {
+const GalleryCard = ( {dark, img} ) => {
   return (
     <CardBody dark={dark}>
-      <img src={jawsImg} alt='shark' />
-      <h3>Placeholder</h3>
+      <img src={img} alt='shark' />      
     </CardBody>
   )
+}
+
+GalleryCard.defaultProps = {
+  img: jawsImg
 }
 
 export default GalleryCard

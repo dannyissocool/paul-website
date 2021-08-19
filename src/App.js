@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react';
 import { Switch, Route } from 'react-router-dom'
+
 import Navbar from './components/Navbar'
 import Hero from './components/Hero/Hero'
 import Gallery from './components/Gallery'
@@ -8,10 +9,12 @@ import Contact from './components/Contact'
 
 function App() {
   const [dark, setDark] = useState(false)
+ 
 
   const changeMode = () => {
     setDark(!dark)
   }
+ 
 
   return (
     <><Navbar dark={dark} setDark={changeMode} />
