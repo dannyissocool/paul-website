@@ -47,7 +47,7 @@ const Gallery = ({ dark }) => {
 
   const getImgurData = async () => {
      const headers = {
-      'Authorization': 'Client-ID 81792e58483b006'
+      'Authorization': `Client-ID ${process.env.REACT_APP_IMGUR_CLIENT_ID}`
     }
     await axios.get('https://api.imgur.com/3/album/xlZR9xr', {headers})
       .then( res => {
